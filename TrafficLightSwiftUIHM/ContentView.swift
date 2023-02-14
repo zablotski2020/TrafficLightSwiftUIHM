@@ -15,6 +15,7 @@ struct ContentView: View {
                     Color(.black)
                         .frame(width: 200, height: 600)
                         .clipShape(RoundedRectangle(cornerRadius: 70))
+                        .overlay(RoundedRectangle(cornerRadius: 70).stroke(Color.white, lineWidth: 4))
                         .padding(30)
                     VStack {
                         TrafficConditions() // добавление красного круга
@@ -41,6 +42,7 @@ struct ContentView: View {
                     .frame(width: 190, height: 60)
                     .font(.system(size: 30, weight: .bold, design: .default))
                     .foregroundColor(.white)
+                    .overlay(RoundedRectangle(cornerRadius: 15).stroke(Color.white, lineWidth: 4))
                     .background(Color.black).cornerRadius(15)
                 .padding()
             }
@@ -59,7 +61,10 @@ struct ContentView: View {
             darkGreen = 1.0
         } else if darkGreen == 1.0 {
             darkGreen = 0.001
+            darkYellow = 1.0
+        } else if darkYellow == 1.0 {
             darkRed = 1.0
+            darkYellow = 0.001
         }
     }
 }
